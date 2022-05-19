@@ -9,23 +9,24 @@ public class ShellSort {
         System.out.println(Arrays.toString(arr));
     }
 
-    public static int[] shellSort(int arr[]) {
+    public static int[] shellSort(int[] arr) {
         if (arr == null || arr.length < 2) {
             return arr;
         }
-
-//        for (int gap = arr.length / 2; gap > 0; gap /= 2) {
-//
-//            for (int i = gap; i < arr.length; i++) {
-//
-//                for (int j = 0; j < ; j--) {
-//
-//                }
-//
-//            }
-//
-//        }
-
+        for (int gap = arr.length / 2; gap > 0; gap /= 2) {
+            for (int i = gap; i < arr.length; i++) {
+                int temp = arr[i];
+                int j = i;
+                for (; j + 1 > gap; j -= gap) {  // j+1>gap关键
+                    if (temp < arr[j - gap]) {
+                        arr[j] = arr[j - gap];
+                    } else {
+                        break;
+                    }
+                }
+                arr[j] = temp;
+            }
+        }
         return arr;
     }
 }
