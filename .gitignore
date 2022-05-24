@@ -4,6 +4,7 @@ target/
 !**/src/main/**
 !**/src/test/**
 applog/
+out/
 
 ### STS ###
 .apt_generated
